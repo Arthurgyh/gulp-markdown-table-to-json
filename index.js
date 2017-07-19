@@ -38,7 +38,7 @@ function handle(text,anchor) {
 
         if (line) {
             line = line.split("|")
-            for (var j in line) {
+            for (var j=0;j<line.length;j++) {
 
                 line[j] = md_trim(line[j])
                 if ((j == 0 || j == line.length - 1) && line[j] === "") {
@@ -46,8 +46,11 @@ function handle(text,anchor) {
                 } else {
                     cols.push(line[j]);
                 }
+                if(cols.length == 1){
+                    //console.log("first col", [j, line[j]]);
+                }
             }
-            if (line.length) {
+            if (cols.length) {
                 //cols = line;
                 rows.push(cols)
             } else {
@@ -72,7 +75,7 @@ function handle(text,anchor) {
 
             var line_this = line.split("|")
             var row = []
-            for (var j in line_this) {
+            for (var j=0;j<line_this.length;j++) {
                 line_this[j] = md_trim(line_this[j])
                 if ((j == 0 || j == line_this.length - 1) && line_this[j] === "") {
 

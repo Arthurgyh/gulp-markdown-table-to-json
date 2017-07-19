@@ -48,7 +48,7 @@ function handle(text,anchor) {
                 }
             }
             if (line.length) {
-                cols = line;
+                //cols = line;
                 rows.push(cols)
             } else {
                 console.error("markdown expect column title")
